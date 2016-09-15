@@ -97,31 +97,31 @@ CRF_Model::FunctionGradientWrapper(const vector<double> & x, vector<double> & gr
 }
 
 
-int
-CRF_Model::perform_BFGS()
-{
-  /*
-  pointer_to_working_object = this;
+// int
+// CRF_Model::perform_BFGS()
+// {
+  
+//   pointer_to_working_object = this;
 
-  const int dim = _fb.Size();
-  vector<double> x0(dim);
+//   const int dim = _fb.Size();
+//   vector<double> x0(dim);
 
-  for (int i = 0; i < dim; i++) { x0[i] = _vl[i]; }
+//   for (int i = 0; i < dim; i++) { x0[i] = _vl[i]; }
 
-  vector<double> x;
-  if (_inequality_width > 0) {
-    cerr << "performing OWL-QN" << endl;
-    x = perform_OWLQN(CRF_Model::FunctionGradientWrapper, x0, _inequality_width);
-  } else {
-    cerr << "performing L-BFGS" << endl;
-    x = perform_LBFGS(CRF_Model::FunctionGradientWrapper, x0);
-  }
+//   vector<double> x;
+//   if (_inequality_width > 0) {
+//     cerr << "performing OWL-QN" << endl;
+//     x = perform_OWLQN(CRF_Model::FunctionGradientWrapper, x0, _inequality_width);
+//   } else {
+//     cerr << "performing L-BFGS" << endl;
+//     x = perform_LBFGS(CRF_Model::FunctionGradientWrapper, x0);
+//   }
 
-  for (int i = 0; i < dim; i++) { _vl[i] = x[i]; }
+//   for (int i = 0; i < dim; i++) { _vl[i] = x[i]; }
 
-  return 0;
-  */
-}
+//   return 0;
+  
+// }
 
 
 double CRF_Model::forward_prob(const int len)
@@ -476,7 +476,7 @@ CRF_Model::make_feature_bag(const int cutoff)
 {
 #ifdef USE_HASH_MAP
   //  typedef __gnu_cxx::hash_map<mefeature_type, int> map_type;
-  typedef std::tr1::unordered_map<mefeature_type, int> map_type;
+  typedef std::unordered_map<mefeature_type, int> map_type;
 #else
   typedef std::map<mefeature_type, int> map_type;
 #endif
